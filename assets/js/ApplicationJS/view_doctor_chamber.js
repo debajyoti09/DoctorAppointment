@@ -77,5 +77,23 @@ function view_chamber(chamber_address){
                                        </div>\n\
                                      </div>\n\
                                     </div>') ;
+         $('#ddl_chamber_address').append('<option value="'+val.doctor_chamber_id+'"><b>Chamber '+val.doctor_chamber_no+' ,</b>('+val.doctor_chamber_address+')</option>');
      });
+}
+
+
+
+function delete_doctor_chamber(delete_button_object)
+{
+     jQuery.ajax({
+           type: "POST",
+           url: "doctor_chamber/ctrl_doctor_chamber/delete_doctor_chamber",
+           data:{'doctor_chamber_id':$(delete_button_object).attr('data-info')},
+           success: function(){
+             $($(delete_button_object).attr('data-target')).remove();
+             $("select#ddl_chamber_address option[value="+$(delete_button_object).attr('data-info')+"]").remove();
+//             $('')
+       }
+
+        });
 }

@@ -19,6 +19,10 @@ class Mdl_doctor_chamber  extends CI_Model{
         mysqli_next_result($this->db->conn_id); 
         return $query->result();
     }
-    
+    public function delete_doctor_chamber($doctor_chamber_id)
+    {
+        $query= $this->db->query('call proc_delete_doctor_chamber('.$doctor_chamber_id.')');
+        mysqli_next_result($this->db->conn_id); 
+    }
 }
 ?>

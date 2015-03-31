@@ -66,5 +66,20 @@ class Ctrl_doctor_chamber extends MX_Controller {
             show_404();
         }
     }
+    
+    
+    function delete_doctor_chamber()
+    {
+        if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']=="XMLHttpRequest") {
+            $doctor_chamber_id=$_POST['doctor_chamber_id'];
+            $this->load->model('doctor_chamber/mdl_doctor_chamber');
+             $chamber_address=$this->mdl_doctor_chamber->delete_doctor_chamber($doctor_chamber_id);
+        }
+        else
+        {
+            show_404();
+        }
+    }
+    
 }
 ?>

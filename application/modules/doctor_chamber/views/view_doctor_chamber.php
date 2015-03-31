@@ -135,11 +135,12 @@
                                                 Chamber:
                                             </div>
                                             <div class="col-lg-6">
-                                                <select class="form-control" name="ddl_chamber_address" id="ddl_chamber_address" onchange="clear_error_span(this)"  data-cityDropdown="ddl_chamber_City" >
+                                                <select class="form-control" name="ddl_chamber_address" id="ddl_chamber_address" onchange="clear_error_span(this)"  data-cityDropdown="ddl_chamber_City">
                                             <option value="0">--select--</option>
                                             <?php
-                                                    foreach($states_for_dropdown as $row)
-                                                        echo '<option value="'.$row['state_id'].'">'.$row['state_name'].'</option>'; 
+                                                     if(isset($doctor_chamber_general_setting))
+                                                        foreach($doctor_chamber_general_setting as $key =>$row)
+                                                        echo '<option value="'.$row['doctor_chamber_id'].'"><b>Chamber '.$row['doctor_chamber_no'].' ,</b>('.$row['doctor_chamber_address'].')</option>'; 
                                                           ?>
                                                 </select>
                                             </div>
