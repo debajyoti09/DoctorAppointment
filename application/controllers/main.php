@@ -132,7 +132,7 @@ class Main extends MX_Controller {
             }else
             {
                 $this->load->view('view_login');
-                echo "<script> $('#error_modal').modal('show') </script>";
+//                echo "<script> $('#error_modal').modal('show') </script>";
 //                echo "Incorrect username/password";
             }
         }
