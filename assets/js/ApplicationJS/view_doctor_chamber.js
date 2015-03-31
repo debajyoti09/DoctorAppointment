@@ -52,8 +52,8 @@ function view_chamber(chamber_address){
     $('#AddCareerMenu').css('display','none');
      $.each(JSON.parse(chamber_address), function(key,val) {
                     $('#div_doctor_chamber').append('\
-                          <div id="doctor_chamber'+val.doctor_chamber_id+'" style="margin-top:10px; padding:5px;" data-hideVisibleClass="edit_doctor">\n\\n\
-                                <h3>Chamber '+(key+1)+'</h3>\n\
+                          <div id="doctor_chamber'+val.doctor_chamber_id+'" style="margin-top:10px; padding:5px;" data-hideVisibleClass="edit_doctor">\n\
+                                <h3>Chamber '+val.doctor_chamber_no+'</h3>\n\
                                 <div class="row">\n\
                                         <div class="col-lg-5">\n\
                                             <div class="row">\n\

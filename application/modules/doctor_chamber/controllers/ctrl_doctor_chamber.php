@@ -16,6 +16,7 @@ class Ctrl_doctor_chamber extends MX_Controller {
             foreach($doctor_chamber_general_settings as $row)
                 $chamber_general_setting[]=array(
                     'doctor_chamber_id'=>$row->doctor_chamber_id,
+                    'doctor_chamber_no'=>$row->chamber_no,
                     'doctor_chamber_address'=>$row->chamber_address,
                     'doctor_chamber_state_id'=>$row->state_id,
                     'doctor_chamber_state_name'=>$row->state_name,
@@ -48,6 +49,7 @@ class Ctrl_doctor_chamber extends MX_Controller {
              foreach($chamber_address as $row)
                 $chamber_address_options[]=array(
                     'doctor_chamber_id'=>$row->doctor_chamber_id,
+                    'doctor_chamber_no'=>$row->chamber_no,
                     'doctor_chamber_address'=>$row->chamber_address,
                     'doctor_chamber_phone'=>$row->chamber_phone,
                     'doctor_chamber_state_id'=>$row->state_id,

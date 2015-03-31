@@ -16,7 +16,7 @@
                     if(isset($doctor_chamber_general_setting))
                      foreach($doctor_chamber_general_setting as $key =>$row)
                       echo   '<div id="doctor_chamber'.$row['doctor_chamber_id'].'" style="margin-top:10px; padding:5px;" data-hideVisibleClass="edit_doctor">
-                          <h3>Chamber '.($key+1).'</h3>
+                          <h3>Chamber '.$row['doctor_chamber_no'].'</h3>
                           <div class="row">
                               <div class="col-lg-5">
                                   <div class="row">
