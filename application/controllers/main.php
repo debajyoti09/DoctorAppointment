@@ -130,11 +130,14 @@ class Main extends MX_Controller {
                 $this->session->set_userdata($data);
                 redirect('members');
             }else
-            {
-                $this->load->view('view_login');
-                echo "<script> $('#error_modal').modal('show') </script>";
-//                echo "Incorrect username/password";
-            }
+                if(validation_errors()!="")
+                    {
+                        $this->load->view('view_login');
+                    }
+                else {
+                    $error['error']="Incorrect UserEmail/Password";
+                               $this->load->view('view_login',$error);
+                }
         }
         else{
             echo "You have not  the permission to access this page. Please contact your webmaster.";
