@@ -14,8 +14,9 @@
                <div id="div_doctor_chamber">
                     <?php
                     if(isset($doctor_chamber_general_setting))
-                     foreach($doctor_chamber_general_setting as $row)
-                      echo   '<div id="doctor_chamber'.$row['doctor_chamber_id'].'" style="margin-top:30px; padding:5px;" data-hideVisibleClass="edit_doctor">
+                     foreach($doctor_chamber_general_setting as $key =>$row)
+                      echo   '<div id="doctor_chamber'.$row['doctor_chamber_id'].'" style="margin-top:10px; padding:5px;" data-hideVisibleClass="edit_doctor">
+                          <h3>Chamber '.($key+1).'</h3>
                           <div class="row">
                               <div class="col-lg-5">
                                   <div class="row">
