@@ -92,8 +92,7 @@ function delete_doctor_chamber(delete_button_object)
            success: function(){
              $($(delete_button_object).attr('data-target')).remove();
              $("select#ddl_chamber_address option[value="+$(delete_button_object).attr('data-info')+"]").remove();
-//             $('')
-       }
+}
 
         });
 }
