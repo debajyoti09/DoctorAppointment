@@ -157,6 +157,7 @@
                                                             buttonWidth:'100%',
                                                             buttonText: function(options, select) {
                                                                     if (options.length === 0) {
+                                                                        
                                                                         return '--Select Days--';
                                                                     }
                                                                     else if (options.length > 3) {
