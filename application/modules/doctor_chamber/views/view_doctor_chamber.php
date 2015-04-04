@@ -136,7 +136,7 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <select class="form-control" name="ddl_chamber_address" id="ddl_chamber_address" onchange="clear_error_span(this)"  data-cityDropdown="ddl_chamber_City">
-                                            <option value="0">--select--</option>
+                                            <option value="0">--Select Chamber--</option>
                                             <?php
                                                      if(isset($doctor_chamber_general_setting))
                                                         foreach($doctor_chamber_general_setting as $key =>$row)
@@ -148,10 +148,45 @@
                                         <p/>
                                         <div class="row">
                                             <div class="col-lg-3">
-                                                Week Days:
+                                                Open:
                                             </div>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" maxlength="255" name="txt_doctor_chamber_address" id="txt_doctor_chamber_address" oninput="clear_error_span(this)" />
+                                                <script type="text/javascript">
+                                                    $(document).ready(function() {
+                                                        $('#example-getting-started').multiselect({
+                                                            buttonWidth:'100%',
+                                                            buttonText: function(options, select) {
+                                                                    if (options.length === 0) {
+                                                                        return '--Select Days--';
+                                                                    }
+                                                                    else if (options.length > 3) {
+                                                                        return 'More than 3 options selected!';
+                                                                    }
+                                                                     else {
+                                                                         var labels = [];
+                                                                         options.each(function() {
+                                                                             if ($(this).attr('label') !== undefined) {
+                                                                                 labels.push($(this).attr('label'));
+                                                                             }
+                                                                             else {
+                                                                                 labels.push($(this).html());
+                                                                             }
+                                                                         });
+                                                                         return labels.join(', ') + '';
+                                                                     }
+                                                                }
+                                                        });
+                                                    });
+                                                </script>
+                                                <!-- Note the missing multiple attribute! -->
+                                                <select id="example-getting-started" multiple="multiple">
+                                                    <option value="1">Option 1</option>
+                                                    <option value="2">Option 2</option>
+                                                    <option value="3">Option 3</option>
+                                                    <option value="4">Option 4</option>
+                                                    <option value="5">Option 5</option>
+                                                    <option value="6">Option 6</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <p/>
