@@ -8,4 +8,5 @@ class Mdl_doctor_publication extends CI_Model{
         return $query->result();
     }
 }
+//changes made to check github
 ?>
