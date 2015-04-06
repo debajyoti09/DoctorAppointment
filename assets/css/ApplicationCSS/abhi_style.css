@@ -1,0 +1,121 @@
+/*custom css @abhinandan*/
+@font-face{
+    font-family: oxygen;
+    src: url(../fonts/Oxygen.woff);
+}
+@font-face{
+    font-family: gotham;
+    src: url(../fonts/GothamLight.woff);
+}
+.navbar-inverse {
+background: url(../images/header-bg.png) repeat;
+background-color: transparent;
+border-color: transparent;
+}
+/*header ends here*/
+.zero_padding{padding: 0 0;}
+.zero_margin{margin: 0 0;}
+.clearfix{
+    content: '';
+    display: block;
+    clear: both;
+}
+/*home page styling*/
+.coverHome{
+    background: url(../images/banner.jpg) no-repeat top left;
+    background-size: cover;
+    height: 100vh;
+}
+h1.highlighted{
+    font-family: 'oxygen';
+    font-weight: bold;
+    color: #fff;
+    margin: 0 0;
+    text-align: center;
+    font-size: 42pt;
+}
+.searchBar{
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    top: 40%;
+}
+.searchformMain{
+    background-color: rgba(21, 21, 21, 0.7);
+    padding: 7px;
+    height: 65px;
+    margin-top: 17px;
+}
+.searchformMain .form-group{
+    float: left;
+}
+.searchformMain .form-control{
+    font-size: 25px;
+    border-radius: 0;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    border-color: rgba(21, 21, 21, 1);
+    height: 50px;
+    font-family: 'gotham';
+    width: 188%;
+}
+.searchformMain .btn-success{
+    border-radius: 0;
+    background-color: #1cb78c;
+    font-family: 'gotham';
+    float: right;
+padding: 8px 48px 4px;
+font-size: 25px;
+}
+/*footer*/
+.social{
+    background: #1291bd;
+    color: #fff;
+    font-family: 'gotham';
+    font-size: 25pt;
+    text-align: center;
+    padding: 50px 0;
+}
+.social *{display: inline;}
+.social ul{
+    padding-left: 0;
+    position: relative;
+    top: -5px;
+}
+.social li{
+    list-style: none;
+    display: inline;
+    padding-left: 10px;
+}
+.social li img{width: 40px;}
+.productOfOneStepAhead{
+    background: url(../images/productName-bg.jpg) no-repeat top left;
+    background-size: cover;
+    font-family: 'gotham';
+    font-size: 16pt;
+    padding: 60px 0;
+    color: #fff;
+    text-align: center;
+}
+.productOfOneStepAhead a{
+    color: #fff;
+}
+.productOfOneStepAhead a:hover{
+    text-decoration: none;
+}
+.footerPrimary{
+    background: url(../images/footer-bottom-bg.png) no-repeat top left;
+    background-size: cover;
+    padding: 20px 0 10px 0;
+    color: #fff;
+    font-family: 'gotham';
+}
+.footerPrimary a{color: #fff; font-family: 'gotham';}
+.footerPrimary a:hover{text-decoration: none;}
+ul.footer_list{float: right;}
+ul.footer_list li{
+    list-style: none;
+    display: inline;
+    padding-right: 13px;
+}
