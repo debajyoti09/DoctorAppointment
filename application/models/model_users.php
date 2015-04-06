@@ -5,13 +5,14 @@ class Model_users  extends CI_Model{
     public function can_log_in()
     {
         $this->db->where('email',  $this->input->post('email'));
-        $this->db->where('password', $this->input->post('password'));
+        $this->db->where('password', md5($this->input->post('password')));
+        
         $query= $this->db->get('doctor');
         if($query->num_rows()===1)
         {
-            return 1;
+            return TRUE;
         }  else {
-            return 0;   
+            return FALSE;
         }
     }
     
@@ -96,7 +97,7 @@ class Model_users  extends CI_Model{
     public function get_doctor_id()
     {
         $this->db->where('email',  $this->input->post('email'));
-        $this->db->where('password',$this->input->post('password'));
+        $this->db->where('password', $this->input->post('password'));
         
         $query= $this->db->get('doctor');
         return $query->row()->doctor_id;

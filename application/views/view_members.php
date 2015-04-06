@@ -11,6 +11,7 @@
 <script src="<?php echo base_url().'assets/js/ApplicationJS/main.js' ?>"></script>
 <script src="<?php echo base_url().'assets/js/ApplicationJS/view_doctor_degree_career.js' ?>"></script>
 <script src="<?php echo base_url().'assets/js/ApplicationJS/view_doctor_chamber.js' ?>"></script>
+<script src="<?php echo base_url().'assets/js/ApplicationJS/view_doctor_publication.js' ?>"></script>
 
 <link rel="stylesheet" type="text/css"  href="<?php echo base_url().'assets/css/BootstrapCSS/bootstrap.css' ;?>">
 <link rel="stylesheet" type="text/css"  href="<?php echo base_url().'assets/css/BootstrapCSS/bootstrap-editable.css' ;?>">
@@ -135,6 +136,7 @@
                                     </div>' ;
                               ?>
                           </div>
+                          
                       </div>
                       <div role="tabpanel" class="tab-pane" id="tab_carrier">
                           <h3><input type="button" class="btn btn-info" data-value="AddCareerMenu" data-form="add_doctor_career" data-toggle="modal" data-target="#AddCareerForm" value="Add Career"/></h3>
@@ -149,14 +151,14 @@
                                             <div class="row">
                                                 <div class="col-lg-offset-1 col-lg-2">Position:</div>
                                                 <div class="col-lg-7">
-                                                    <input type="text" class="form-control" maxlength="255" name="txt_doctor_career_position" id="txt_add_doctor_career_Position" oninput="clear_error_span(this)" />
+                                                    <input type="text" class="form-control" maxlength="255" name="txt_doctor_career_position" id="txt_add_doctor_career_Position" onkeypress="clear_error_span(this)" />
                                                 </div>
                                                 </div>
                                             <div class="row">
                                                 <p/>
                                                     <div class="col-lg-offset-1 col-lg-2">Hospital:</div>
                                                 <div class="col-lg-7">
-                                                    <input type="text" class="form-control" maxlength="255" name="txt_doctor_career_Hospital" id="txt_add_doctor_career_Hospital" oninput="clear_error_span(this)" />
+                                                    <input type="text" class="form-control" maxlength="255" name="txt_doctor_career_Hospital" id="txt_add_doctor_career_Hospital" onkeypress="clear_error_span(this)" />
                                                 </div>
                                                 </div>
                                             <div class="row">
@@ -185,7 +187,7 @@
                                             <div class="row">
                                                 <p/>    
                                                 <div class="col-lg-10" style="text-align:right;">
-                                                    <input type="button" class="btn btn-primary" data-dismiss="modal" id="btn_add_career_submit" value="Save"/>
+                                                    <input type="button" class="btn btn-primary" id="btn_add_career_submit" value="Save"/>
                                                     <input type="button" class="btn btn-default" id="btn_add_career_cancel" data-dismiss="modal" onclick="cancel_Form(this)" value="Close"/>
                                                 </div>
                                                 </div>
@@ -231,6 +233,7 @@
                                     </div>' ;
                               ?>
                           </div>
+                          
                     </div>
                       <div role="tabpanel" class="tab-pane" id="tab_chamber">
                           <?php echo Modules::run('doctor_chamber/ctrl_doctor_chamber/index'); ?>
