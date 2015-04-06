@@ -222,7 +222,7 @@ $(function(){
                                                 url: "set_get_doctor_data/set_doctor_career",
                                                 data:$('#add_doctor_career').serialize(),
                                                 success: function(data){
-                                                    cancel_Form(object);
+                                                    cancel_AddCareerForm(object);
                                                   view_career(data);
                                                }
                                              });
@@ -367,8 +367,7 @@ function edit_doctor_career_end_year(event,object)
     event.stopPropagation();
     data = $(object).attr('data-info');
    var title='Enter End Year' ;
-   var p ='#doctor_career_end_year'+data;
-    
+   var p ='#doctor_career_end_year'+data;    
    $(p).editable( {
         toggle:'manual',
         pk:data,
@@ -386,11 +385,3 @@ function edit_doctor_career_end_year(event,object)
       });    
     $(p).editable('toggle');
 }
-
-
-
-
-
-
-
-

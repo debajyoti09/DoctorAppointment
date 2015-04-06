@@ -28,12 +28,24 @@ class Set_get_doctor_publication  extends MX_Controller {
     }
     function delete_doctor_publication(){
         if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']=="XMLHttpRequest") {
-            $this->load->model('mdl_doctor_publication');  
+            $this->load->model('doctor_publication/mdl_doctor_publication');  
             $prm_doctor_publication_id=$_POST['dt_publication_id'];
-            $this->model_get_set_doctor_data->delete_doctor_degree($prm_doctor_degree_id);
+            $this->mdl_doctor_publication->delete_doctor_publication($prm_doctor_publication_id);
         }
         else{
-            
+            show_404();
+        }
+    }
+    function update_doctor_publication() {
+        if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']=="XMLHttpRequest") {
+            $this->load->model('doctor_publication/mdl_doctor_publication');
+            $prm_doctor_publication_id = $_POST['pk'];
+            $column_name= $_POST['column_name'];
+            $value= $_POST['value'];
+            $this->mdl_doctor_publication->update_doctor_publication($prm_doctor_publication_id, $column_name, $value);
+        }
+        else {
+            show_404();
         }
     }
 }

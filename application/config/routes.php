@@ -43,6 +43,8 @@ $route['set_get_doctor_data/(:any)'] = "set_get_doctor_data/$1";
 $route['ctrl_get_fixed_data/(:any)'] = "ctrl_get_fixed_data/$1";
 $route['doctor_chamber/ctrl_doctor_chamber/(:any)']="doctor_chamber/ctrl_doctor_chamber/$1";
 $route['control_address_city_state_pin/ctrl_control_address_city_state_pin/(:any)']="control_address_city_state_pin/ctrl_control_address_city_state_pin/$1";
+$route['doctor_publication/ctrl_doctor_publication/(:any)']="doctor_publication/ctrl_doctor_publication/$1";
+$route['doctor_publication/set_get_doctor_publication/(:any)']="doctor_publication/set_get_doctor_publication/$1";
 $route['(:any)'] = "main/$1";
 
 

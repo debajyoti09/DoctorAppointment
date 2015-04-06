@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>LogIn Page</title>
+
 <body>
 
 <div id="container">
@@ -14,8 +15,7 @@
         ?>
     </h3>
     <?php
-    if(isset($error))
-        echo $error;
+    
     echo form_open('login_validation');
     
     echo validation_errors();
@@ -37,7 +37,6 @@
     
     <a href='<?php echo base_url()."signup"; ?>'>Sign Up!</a>
 </div>
-
 
 </body>
 </html>

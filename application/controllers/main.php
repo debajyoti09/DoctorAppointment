@@ -115,11 +115,10 @@ class Main extends MX_Controller {
         if ($_SERVER['REQUEST_METHOD'] === 'POST')
         {
             $this->load->library('email');
-            $this->form_validation->set_rules('email','Email','required|trim|valid_email|xss_clean');//|callback_validate_credentials        
+            $this->form_validation->set_rules('email','Email','required|trim|valid_email|xss_clean|callback_validate_credentials');        
             $this->form_validation->set_rules('password','Password','required|xss_clean|md5|trim');
-             $this->load->model('model_users');
-            
-            if($this->form_validation->run() && $this->model_users->can_log_in()==1)
+
+            if($this->form_validation->run())
             {
                 $this->load->model('model_users');
                 $doctor_id= $this->model_users->get_doctor_id();
@@ -130,14 +129,9 @@ class Main extends MX_Controller {
                 $this->session->set_userdata($data);
                 redirect('members');
             }else
-                if(validation_errors()!="")
-                    {
-                        $this->load->view('view_login');
-                    }
-                else {
-                    $error['error']="Incorrect UserEmail/Password";
-                               $this->load->view('view_login',$error);
-                }
+            {
+                $this->load->view('view_login');
+            }
         }
         else{
             echo "You have not  the permission to access this page. Please contact your webmaster.";
@@ -219,18 +213,18 @@ class Main extends MX_Controller {
     }
 
     
-//    public function validate_credentials()
-//    {
-//        $this->load->model('model_users');
-//        if($this->model_users->can_log_in()==1)
-//        {
-//            return 1;
-//        }  else {
-//            $this->form_validation->set_message('validate_credentials','Incorrect username/password');
-//            return 0;
-//        }
-//        
-//    }
+    public function validate_credentials()
+    {
+        $this->load->model('model_users');
+        if($this->model_users->can_log_in())
+        {
+            return TRUE;
+        }  else {
+            $this->form_validation->set_message('validate_credentials','Incorrect username/password');
+            return FALSE;
+        }
+        
+    }
     
     
     public function  logout()
